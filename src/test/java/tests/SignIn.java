@@ -7,6 +7,7 @@ import pages.SignInPage;
 
 public class SignIn extends BaseTest {
 
+
     @Test
     public void signIn(){
         MainPage mainPage = new MainPage();

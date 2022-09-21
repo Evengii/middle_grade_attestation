@@ -1,5 +1,6 @@
 package tests;
 
+
 import com.codeborne.selenide.Condition;
 import configs.Config;
 import configs.Creds;
@@ -35,8 +36,9 @@ import static com.codeborne.selenide.Selenide.open;
  *      Assert Your Shopping Cart is empty! appeared
  */
 
+
 public class BuyDesktopTest extends BaseTest{
-;
+
     ComputersPage computersPage = new ComputersPage();
     DesktopsPage desktopsPage = new DesktopsPage();
     SimpleComputerPage simpleComputerPage = new SimpleComputerPage();

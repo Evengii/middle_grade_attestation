@@ -7,6 +7,7 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
 
+
 public class CheckoutPage extends BasePage{
     private static SelenideElement firstNameInput = $x("//input[@id='BillingNewAddress_FirstName']");
     private static SelenideElement lastNameInput = $x("//input[@id='BillingNewAddress_LastName']");

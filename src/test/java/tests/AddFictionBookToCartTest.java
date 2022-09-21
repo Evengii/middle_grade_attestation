@@ -24,6 +24,7 @@ import static com.codeborne.selenide.Selenide.open;
  *      Assert the Fiction is in cart, compare with existing items
  */
 
+
 public class AddFictionBookToCartTest extends BaseTest{
 
     BookPage bookPage = new BookPage();

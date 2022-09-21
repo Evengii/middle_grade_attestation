@@ -16,6 +16,7 @@ public class Config {
     private final static String COMPLETED_CHECKOUT = "https://demowebshop.tricentis.com/checkout/completed/";
 
 
+
     public static String getBaseUrl() {
         return BASE_URL;
     }
