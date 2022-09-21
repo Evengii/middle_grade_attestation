@@ -17,6 +17,10 @@ public class Config {
 
 
 
+    private final static String BASE_URL = "https://demowebshop.tricentis.com";
+    private final static String BOOKS = BASE_URL + "/books";
+    private final static String COMPUTERS = BASE_URL + "/computers";
+    ...
     public static String getBaseUrl() {
         return BASE_URL;
     }
