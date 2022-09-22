@@ -1,12 +1,10 @@
 package tests;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Selenide;
 import configs.Config;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.BasePage;
-import pages.BookPage;
+import pages.BooksPage;
 import pages.CartPage;
 
 import java.time.Duration;
@@ -24,23 +22,24 @@ import static com.codeborne.selenide.Selenide.open;
  *      Assert the Fiction is in cart, compare with existing items
  */
 
+
 public class AddFictionBookToCartTest extends BaseTest{
 
-    BookPage bookPage = new BookPage();
+    BooksPage booksPage = new BooksPage();
     CartPage cartPage = new CartPage();
 
     @Test
     public void addBookToCart(){
         open(Config.getBooks());
-        bookPage.openItemPage();
-        String url = bookPage.getProductPageUrl();
+        booksPage.openItemPage();
+        String url = booksPage.getProductPageUrl();
         Assert.assertTrue(url.equals(Config.getFictionBookUrl()));
 
-        bookPage.addToCart();
-        Assert.assertTrue(bookPage.getNotificationToCart().shouldBe(Condition.visible,
+        booksPage.addToCart();
+        Assert.assertTrue(booksPage.getNotificationToCart().shouldBe(Condition.visible,
                 Duration.ofSeconds(4)).isDisplayed(),"Cart is not opened");
 
-        bookPage.switchToCart();
+        booksPage.switchToCart();
         Assert.assertEquals(cartPage.getItemFictionInCartText(),"Fiction");
     }
 }
