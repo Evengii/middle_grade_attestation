@@ -9,6 +9,7 @@ public class Config {
     private final static String BOOKS = BASE_URL + "books";
     private final static String COMPUTERS = BASE_URL + "computers";
     private final static String DESKTOPS = BASE_URL + "desktops";
+    private final static String CAMCORDER = BASE_URL + "camcorder";
     private final static String SIMPLE_COMPUTER = BASE_URL + "simple-computer";
     private final static String FICTION_BOOK_URL = BASE_URL + "fiction";
     private final static String CHECKOUT = BASE_URL + "onepagecheckout";
@@ -22,6 +23,7 @@ public class Config {
     public static String getBooks() {return BOOKS; }
     public static String getComputers() {return COMPUTERS; }
     public static String getDesktops() {return DESKTOPS; }
+    public static String getCamcorderPage(){return CAMCORDER;}
     public static String getSimpleComputer() {return SIMPLE_COMPUTER; }
 
     public static String getFictionBookUrl() {return FICTION_BOOK_URL;}

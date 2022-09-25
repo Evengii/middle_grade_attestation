@@ -32,7 +32,7 @@ public class AddFictionBookToCartTest extends BaseTest{
     public void addBookToCart(){
         open(Config.getBooks());
         booksPage.openItemPage();
-        String url = booksPage.getProductPageUrl();
+        String url = booksPage.getPageUrl();
         Assert.assertTrue(url.equals(Config.getFictionBookUrl()));
 
         booksPage.addToCart();

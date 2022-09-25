@@ -32,8 +32,4 @@ public class BooksPage extends BasePage{
     public void openItemPage(){
         fictionBook.click();
     }
-
-    public String getProductPageUrl(){
-        return webdriver().driver().url();
-    }
 }
