@@ -31,9 +31,8 @@ public class AddFictionBookToCartTest extends BaseTest{
     @Test
     public void addBookToCart(){
         open(Config.getBooks());
-        booksPage.openItemPage();
-        String url = booksPage.getPageUrl();
-        Assert.assertTrue(url.equals(Config.getFictionBookUrl()));
+        booksPage.openItemPage("Picture of Fiction");;
+        Assert.assertTrue(booksPage.getPageUrl().equals(Config.getFictionBookUrl()));
 
         booksPage.addToCart();
         Assert.assertTrue(booksPage.getNotificationToCart().shouldBe(Condition.visible,

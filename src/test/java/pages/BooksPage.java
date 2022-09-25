@@ -13,7 +13,6 @@ import java.util.stream.Collectors;
 import static com.codeborne.selenide.Selenide.*;
 
 public class BooksPage extends BasePage{
-    private final SelenideElement fictionBook = $x("//div[@class='item-box']//img[@alt='Picture of Fiction']");
     private final SelenideElement lowToHighDropdown = $(By.id("products-orderby"));
     private final ElementsCollection bookPrices = $$x("//span[@class='price actual-price']");
 
@@ -29,7 +28,7 @@ public class BooksPage extends BasePage{
         return temp;
     }
 
-    public void openItemPage(){
-        fictionBook.click();
+    public void openItemPage(String item){
+        $x("//div[@class='item-box']//img[@alt='" + item + "']").click();
     }
 }
