@@ -15,6 +15,9 @@ import static com.codeborne.selenide.Selenide.*;
 public class BooksPage extends BasePage{
     private final SelenideElement lowToHighDropdown = $(By.id("products-orderby"));
     private final ElementsCollection bookPrices = $$x("//span[@class='price actual-price']");
+    private final SelenideElement itemPage(String item){
+        return $x("//div[@class='item-box']//img[@alt='" + item + "']");
+    }
 
     public void selectLowToHigh(){
         lowToHighDropdown.selectOption("Price: Low to High");
@@ -29,6 +32,6 @@ public class BooksPage extends BasePage{
     }
 
     public void openItemPage(String item){
-        $x("//div[@class='item-box']//img[@alt='" + item + "']").click();
+        itemPage(item).click();
     }
 }
