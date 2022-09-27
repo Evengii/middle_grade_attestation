@@ -4,6 +4,8 @@ package configs;
     Create method to for joining strings to use only one Base URL
  */
 
+import pages.BasePage;
+
 public class Config {
     private final static String BASE_URL = "https://demowebshop.tricentis.com/";
     private final static String BOOKS = BASE_URL + "books";
@@ -15,6 +17,8 @@ public class Config {
     private final static String CHECKOUT = BASE_URL + "onepagecheckout";
     private final static String LOGIN_CHECKOUT = BASE_URL + "login/checkoutasguest?returnUrl=%2Fcart";
     private final static String COMPLETED_CHECKOUT = BASE_URL + "completed";
+    private final static String CART = BASE_URL + "cart";
+    private final static String DIGITAL_DOWNLOADS = BASE_URL + "digital-downloads";
 
     public static String getBaseUrl() {
         return BASE_URL;
@@ -30,4 +34,6 @@ public class Config {
     public static String getCheckout() {return CHECKOUT;}
     public static String getLoginCheckout() {return LOGIN_CHECKOUT;}
     public static String getCompletedCheckout() {return COMPLETED_CHECKOUT;}
+    public static String getCart(){return CART; }
+    public static String getDigitalDownloads(){return DIGITAL_DOWNLOADS;}
 }

@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$x;
  2. Create method with input String to get needed element
  */
 
-public class CartPage {
+public class CartPage extends BasePage{
     private final SelenideElement itemFictionInCart = $x("//td[@class='product']//a[text()='Fiction']");
     private final SelenideElement itemSimpleComputerInCart = $x("//td[@class='product']//a[text()='Simple Computer']");
     private final SelenideElement termsOfUseCheckbox = $x("//input[@id='termsofservice']");

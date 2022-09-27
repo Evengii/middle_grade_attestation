@@ -8,8 +8,19 @@ import pages.BooksPage;
 import pages.FictionBookPage;
 import pages.MainPage;
 import pages.SignInPage;
-
 import static com.codeborne.selenide.Selenide.open;
+
+/*
+    1. Open book page
+        Assert page is opened
+    2. Get num of reviews
+    3. Click Add review button
+        Assert review's page is opened
+    4. Fill the input fields
+        Assert confirmation sigh is appeared
+    5. Return to book page
+        Assert the num of reviews increased by 1
+ */
 
 public class ReviewPublishingTest extends BaseTest{
     BooksPage booksPage = new BooksPage();
@@ -26,7 +37,7 @@ public class ReviewPublishingTest extends BaseTest{
 
         open(Config.getBooks());
         booksPage.openItemPage("Picture of Fiction");
-        Assert.assertTrue(booksPage.getPageUrl().equals(Config.getFictionBookUrl()));
+        Assert.assertEquals(Config.getFictionBookUrl(), booksPage.getPageUrl());
 
         int beforeReviewing = fictionBookPage.getNumOfReviews();
         fictionBookPage.clickAddReviewBtn();
