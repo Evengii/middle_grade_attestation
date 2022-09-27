@@ -7,11 +7,11 @@ import pages.SignInPage;
 
 public class SignIn extends BaseTest {
 
-
+    MainPage mainPage = new MainPage();
+    SignInPage signInPage = new SignInPage();
     @Test
     public void signIn(){
-        MainPage mainPage = new MainPage();
-        SignInPage signInPage = mainPage.clickLogin();
+        mainPage.clickLogin();
         signInPage.enterValues(Creds.getLOGIN(), Creds.getPASSWORD());
         signInPage.clickSubmit();
     }
