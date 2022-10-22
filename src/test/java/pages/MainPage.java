@@ -13,13 +13,14 @@ import java.util.List;
 import static com.codeborne.selenide.Selenide.*;
 
 public class MainPage extends BasePage{
-    private final SelenideElement loginBtn = $(".ico-login");
+    private final SelenideElement loginBtn = $x("//li//a[@href='/login']");
     private final SelenideElement searchInput = $x("//input[@id='small-searchterms']");
     private final SelenideElement suggestionsList = $x("//ul[contains(@style,'display: block')]");
     private final ElementsCollection suggestionsItems = $$x("//li[@class='ui-menu-item']//a");
     private final SelenideElement shoppingCartBtn = $x("//a[@href='/cart']//span[@class='cart-label']");
     private final SelenideElement shoppingCartPopup = $x("//div[@class='flyout-cart active']");
     private final SelenideElement popupGoToCartBtn = $x("//input[@value='Go to cart']");
+    private final SelenideElement logoutBtn = $(".ico-logout");
 
     public SignInPage clickLogin(){
         loginBtn.click();
@@ -50,5 +51,13 @@ public class MainPage extends BasePage{
 
     public void goToCartByPopup(){
         popupGoToCartBtn.click();
+    }
+
+    public SelenideElement getLogoutBtn(){
+        return logoutBtn;
+    }
+
+    public void clickLogoutBtn(){
+        logoutBtn.click();
     }
 }

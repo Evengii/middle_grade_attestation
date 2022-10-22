@@ -28,7 +28,8 @@ public class AddFictionBookToCartTest extends BaseTest{
     BooksPage booksPage = new BooksPage();
     CartPage cartPage = new CartPage();
 
-    @Test
+    @Test(groups = {"cart", "e2e", "positive"},
+            description = "Adding fiction book to the cart with valid data")
     public void addBookToCart(){
         open(Config.getBooks());
         booksPage.openItemPage("Picture of Fiction");;

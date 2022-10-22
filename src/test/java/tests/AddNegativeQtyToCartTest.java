@@ -17,10 +17,11 @@ public class AddNegativeQtyToCartTest extends BaseTest{
     BooksPage booksPage = new BooksPage();
     CartPage cartPage = new CartPage();
 
-    @Test
+    @Test(groups = {"cart","negative"},
+            description = "Adding negative quantity of items to the cart")
     public void addNegativeQty(){
         open(Config.getBooks());
-        booksPage.openItemPage("Picture of Fiction");;
+        booksPage.openItemPage("Picture of Fiction");
         Assert.assertEquals(Config.getFictionBookUrl(), booksPage.getPageUrl());
 
         booksPage.setQuantityInput("-5");

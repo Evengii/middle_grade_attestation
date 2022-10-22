@@ -19,7 +19,8 @@ import static com.codeborne.selenide.Selenide.open;
 public class DownloadSampleTest extends BaseTest{
     DigitalDownloadsPage digitalDownloadsPage = new DigitalDownloadsPage();
 
-    @Test
+    @Test(groups = {"positive"},
+            description = "Downloading file to the project's folder")
     public void downloadSample() throws IOException {
         open(Config.getDigitalDownloads());
         digitalDownloadsPage.openItemPage("Picture of Music 2");

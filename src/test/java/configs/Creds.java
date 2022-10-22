@@ -13,6 +13,8 @@ public class Creds {
     private final static String ZIP = "135135";
     private final static String PHONE_NUMBER = "98427418421";
 
+    private final static String WRONG_EMAIL = "sd111@asd.asd";
+
     public static String getFirstName(){
         return FIRST_NAME;
     }
@@ -46,4 +48,6 @@ public class Creds {
     public static String getPhoneNumber() {
         return PHONE_NUMBER;
     }
+
+    public static String getWrongEmail() { return WRONG_EMAIL; }
 }

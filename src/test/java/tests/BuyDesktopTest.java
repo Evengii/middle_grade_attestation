@@ -46,7 +46,8 @@ public class BuyDesktopTest extends BaseTest{
     CheckoutLoginPage checkoutLoginPage = new CheckoutLoginPage();
     CheckoutPage checkoutPage = new CheckoutPage();
 
-    @Test
+    @Test(groups = {"e2e", "positive"},
+            description = "Fully process of buying desktop")
     public void buyDesktop() {
         open(Config.getComputers());
         computersPage.openDesktopPage();

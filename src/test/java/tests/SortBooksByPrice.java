@@ -22,7 +22,8 @@ public class SortBooksByPrice extends BaseTest{
 
     BooksPage booksPage = new BooksPage();
 
-    @Test
+    @Test(groups = {"positive"},
+            description = "Sorting books")
     public void sortBooksLowToHigh(){
         open(Config.getBooks());
         List<Float> sorted = booksPage.getBookPrices().stream().sorted().collect(Collectors.toList());

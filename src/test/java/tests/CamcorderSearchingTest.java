@@ -19,7 +19,8 @@ public class CamcorderSearchingTest {
 
     MainPage mainPage = new MainPage();
 
-    @Test
+    @Test(groups = {"e2e", "positive"},
+            description = "Searching by selecting suggestions in search bar")
     public void searchCamcorder(){
         open(Config.getBaseUrl());
         mainPage.typeInSearch("cam");

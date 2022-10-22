@@ -1,8 +1,11 @@
 package tests;
 
+import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverRunner;
 import configs.Config;
 import configs.Creds;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.BooksPage;
 import pages.FictionBookPage;
@@ -23,13 +26,14 @@ import static com.codeborne.selenide.Selenide.open;
  */
 
 public class ReviewPublishingTest extends BaseTest{
+    SignInPage signInPage = new SignInPage();
+    MainPage mainPage = new MainPage();
     BooksPage booksPage = new BooksPage();
     FictionBookPage fictionBookPage = new FictionBookPage();
     FictionBookPage.FictionReviewPage fictionReviewPage = new FictionBookPage().new FictionReviewPage();
-    MainPage mainPage = new MainPage();
-    SignInPage signInPage = new SignInPage();
 
-    @Test
+    @Test(groups = {"positive"},
+            description = "Creating review for the product")
     public void reviewPublishing(){
         mainPage.clickLogin();
         signInPage.enterValues(Creds.getLOGIN(), Creds.getPASSWORD());

@@ -1,11 +1,10 @@
 package tests;//made it abstract because we won't create class objects
 
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import configs.Config;
-import configs.Creds;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import pages.SignInPage;
+import org.testng.annotations.*;
 
 abstract public class BaseTest {
 
@@ -17,16 +16,19 @@ abstract public class BaseTest {
     }
      */
 
+    @BeforeSuite(groups = {"positive", "negative"})
+    static void allureReports(){
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));
+    }
 
-    @BeforeClass
+    @BeforeMethod(groups = {"positive", "negative"})
     public void init(){
         //setUp();
         Selenide.open(Config.getBaseUrl());
     }
 
-    @AfterClass
+    @AfterMethod(groups = {"positive", "negative"})
     public void tearDown() {
-
         Selenide.closeWebDriver();
     }
 }

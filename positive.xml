@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Testing">
+    <test name="smoke" parallel="none">
+        <groups>
+            <run>
+                <include name="positive"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name="tests.ReviewPublishingTest"></class>
+            <class name="tests.SignIn"></class>
+            <class name="tests.AddFictionBookToCartTest"></class>
+            <class name="tests.AddNegativeQtyToCartTest"></class>
+            <class name="tests.BuyDesktopTest"></class>
+            <class name="tests.CamcorderSearchingTest"></class>
+            <class name="tests.CartPopupTest"></class>
+            <class name="tests.DownloadSampleTest"></class>
+            <class name="tests.SortBooksByPrice"></class>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->

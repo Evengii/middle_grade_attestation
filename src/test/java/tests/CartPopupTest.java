@@ -21,7 +21,8 @@ public class CartPopupTest extends BaseTest{
     SignInPage signInPage = new SignInPage();
     CartPage cartPage = new CartPage();
 
-    @Test
+    @Test(groups = {"cart", "positive"},
+            description = "Checking cart popup appeared")
     public void usingCartPopup(){
         mainPage.clickLogin();
         signInPage.enterValues(Creds.getLOGIN(), Creds.getPASSWORD());
